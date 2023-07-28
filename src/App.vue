@@ -3,9 +3,8 @@
 
 <template>
   <div>
-    Hi!
+    {{ app.getConfig('baseUrl') }}
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
