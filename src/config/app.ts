@@ -1,5 +1,3 @@
-
-
 import sysCfg,{ISysCfg,ISysCfgBModItem} from "./syscfg"
 
 const app = {
@@ -18,8 +16,8 @@ const app = {
 
         return false
     }
-
-
 }
+
+export type IApp = typeof app
 
 export default app

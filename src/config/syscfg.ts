@@ -1,4 +1,4 @@
-export interface ISysCfgBModItem {     
+export interface ISysCfgBModItem {
     name: string  //模块名称
     enable: boolean //是否启用
 }
