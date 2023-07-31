@@ -1,4 +1,5 @@
 import sysCfg,{ISysCfg,ISysCfgBModItem} from "./syscfg"
+import appCtl from "@/controller/AppCtl"
 
 const app = {
     //获取系统配置信息
@@ -15,6 +16,9 @@ const app = {
         }
 
         return false
+    },
+    getAppCtl(){
+        return appCtl
     }
 }
 

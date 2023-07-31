@@ -27,7 +27,7 @@ const iTools = {
         setItem(key: string, value: any) {
             cookies.set(key, value, { expires: 30 })
         },
-        getItem(key: string, defaultValue: any) {
+        getItem(key: string, defaultValue?: any) {
             const stValue = cookies.get(key) || defaultValue
             try {
                 return JSON.parse(stValue)
