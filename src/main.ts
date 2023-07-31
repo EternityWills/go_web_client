@@ -23,7 +23,9 @@ import './assets/styles/global.scss'
     //向根组件绑定全局对象
     uiApp.config.globalProperties.app = window.app
     uiApp.config.globalProperties.Tools = window.Tools
+    uiApp.config.globalProperties.lpk = window.lpk
 
+    app.getAppCtl
     //初始化状态管理与路由，并渲染根组件
 
     uiApp.mount('#app')
