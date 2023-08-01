@@ -1,5 +1,6 @@
 import app from './app'
 import Tools from "@/utils/Tools"
+import { initLoginUserInfo } from '@/controller/AppCtl'
 import { lpk, initLpk } from './lpk'
 
 //声明全局变量相关的类型
@@ -19,5 +20,8 @@ Object.keys(iGlobalVars).forEach(stkey => {
 });
 
 export const ininApp = async () => {
+    //初始基础业务相关的信息
+    await initLoginUserInfo()
+
     initLpk()
 }
