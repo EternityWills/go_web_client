@@ -22,6 +22,12 @@ Object.keys(iGlobalVars).forEach(stkey => {
 export const ininApp = async () => {
     //初始基础业务相关的信息
     await initLoginUserInfo()
-
+    //加载基础平台的语言包
     initLpk()
+    //初始化各个业务模块
+    const IAllEntry: GlobalType.IRecord = import.meta.glob('@/bmod/*/entry.ts', { eager: true })
+    for (const path in IAllEntry) {
+        const iEntryFile = IAllEntry[path]
+        iEntryFile && iEntryFile.entryInit && await iEntryFile.entryInit()
+    }
 }
