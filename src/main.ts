@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { ininApp } from '@/config/init'
+import { ininApp, initGlobalComponents } from '@/config/init'
 
 import 'normalize.css/normalize.css'
 import './assets/fonts/iconfont.css'
@@ -20,7 +20,7 @@ import './assets/styles/global.scss'
 
 
     //注册全局组件
-
+    initGlobalComponents(uiApp)
 
     //向根组件绑定全局对象
     uiApp.config.globalProperties.app = window.app
