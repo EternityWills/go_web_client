@@ -3,6 +3,7 @@
 Tools.LocalStorage.setItem("test_001", 'testvalue')
 
 console.log(lpk('Index'))
+let show: boolean = true
 
 </script>
 
@@ -13,6 +14,8 @@ console.log(lpk('Index'))
     {{ lpk('Index') }}
     {{ lpk('Type', { index: 1 }) }}
     <Icon icon="icon-time" />
+    <van-button type="primary">主要按钮</van-button>
+    <van-calendar v-model:show="show" />
   </div>
 </template>
 

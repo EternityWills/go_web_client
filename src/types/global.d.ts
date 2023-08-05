@@ -1,6 +1,6 @@
 import { IApp } from "@/config/app";
 import { ITools } from "@/utils/Tools"
-import { IFnLpk } from "./config/lpk";
+import { IFnLpk } from "@/config/lpk";
 
 declare global {
     declare namespace GlobalType {

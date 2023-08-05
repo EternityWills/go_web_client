@@ -7,14 +7,22 @@ import autoprefixer from 'autoprefixer'
 import postCssPxToRem from 'postcss-pxtorem'
 import { resolve } from 'path'
 
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     autoImport({
       imports: ['vue'],
-      dts: 'src/auto-import.d.ts',
-    })
+      dts: 'src/types/auto-import-vue.d.ts',
+    }),
+    Components({
+      dts: 'src/types/auto-import-components.d.ts',
+      resolvers: [VantResolver()],
+    }),
   ],
   resolve: {
     alias: {
