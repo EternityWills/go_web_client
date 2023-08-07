@@ -23,6 +23,10 @@ Object.keys(iGlobalVars).forEach(stkey => {
 export const ininApp = async () => {
     //初始基础业务相关的信息
     await initLoginUserInfo()
+
+    //主题定制
+
+
     //加载基础平台的语言包
     initLpk()
     //初始化各个业务模块
