@@ -1,3 +1,4 @@
+import { changeTheme } from '@/config/theme.ts';
 import mdlUserApi, { IUser } from '@/api/UserApi'
 import { mergeLpk, changeLocale } from '@/config/lpk'
 import { LOGIN_TOKEN } from '@/utils/Constants'
@@ -17,4 +18,5 @@ export default {
     },
     changeLocale,
     mergeLpk,
+    changeTheme,
 }

@@ -1,6 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { ininApp, initGlobalComponents } from '@/config/init'
+import { initRouter } from './router'
+
+import './assets/styles/base-theme.scss'
+import './assets/styles/blue-theme.scss'
+import './assets/styles/black-theme.scss'
 
 import 'normalize.css/normalize.css'
 import './assets/fonts/iconfont.css'
@@ -29,6 +34,10 @@ import './assets/styles/global.scss'
 
     app.getAppCtl
     //初始化状态管理与路由，并渲染根组件
+    //初始化基础模块
+    //初始各业务模块的路由配置
+    //对路由守望进行处理
+    //Keep-alive的使用
 
-    uiApp.mount('#app')
+    uiApp.use(initRouter()).mount('#app')
 })()

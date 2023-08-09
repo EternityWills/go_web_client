@@ -3,6 +3,7 @@ import app from './app'
 import Tools from "@/utils/Tools"
 import { initLoginUserInfo } from '@/controller/AppCtl'
 import { lpk, initLpk } from './lpk'
+import { initTheme } from './theme'
 
 //声明全局变量相关的类型
 type IGlobalVarsKey = 'app' | 'lpk' | 'Tools' | 'Ajax'
@@ -25,6 +26,7 @@ export const ininApp = async () => {
     await initLoginUserInfo()
 
     //主题定制
+    initTheme()
 
 
     //加载基础平台的语言包
