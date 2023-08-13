@@ -1,23 +1,56 @@
-import sysCfg,{ISysCfg,ISysCfgBModItem} from "./syscfg"
+import sysCfg, { ISysCfg, ISysCfgBModItem } from "./syscfg"
 import appCtl from "@/controller/AppCtl"
+import { isArray } from "lodash";
+import type { RouteRecordRaw } from "vue-router"
 
+//存放所有业务模块对应路由信息
+let giAllBModRoutes: RouteRecordRaw[] = []
+
+interface IBModRouteOper {
+    registBModRouter(mixRouter: RouteRecordRaw[] | RouteRecordRaw): void;
+    getAllBModRoutes(): RouteRecordRaw[];
+}
+
+const routeBModRouteOper: IBModRouteOper = {
+    //注册业务模块对应路由信息
+    registBModRouter(mixRouter) {
+        if (!mixRouter) return
+
+        if (isArray(mixRouter)) {
+            giAllBModRoutes = giAllBModRoutes.concat(mixRouter)
+            console.log(giAllBModRoutes)
+            return
+        }
+
+        giAllBModRoutes.push(mixRouter)
+
+    },
+    getAllBModRoutes() {
+        return giAllBModRoutes
+    }
+}
+
+//全局变量app
 const app = {
+    //业务模块路由相关操作
+    ...routeBModRouteOper,
+
     //获取系统配置信息
-    getConfig<T>(key:keyof ISysCfg):T{
-        return sysCfg[key]as unknown as T
+    getConfig<T>(key: keyof ISysCfg): T {
+        return sysCfg[key] as unknown as T
     },
 
     //判断启用的业务模块
-    checkBmodIsEnable(stModuleName:string){
-        const bmodNames:ISysCfgBModItem[] = app.getConfig<ISysCfgBModItem[]>("bmodNames")
+    checkBmodIsEnable(stModuleName: string) {
+        const bmodNames: ISysCfgBModItem[] = app.getConfig<ISysCfgBModItem[]>("bmodNames")
 
-        if(bmodNames.find(item=>item.name==stModuleName&&item.enable)){
+        if (bmodNames.find(item => item.name == stModuleName && item.enable)) {
             return true
         }
 
         return false
     },
-    getAppCtl(){
+    getAppCtl() {
         return appCtl
     }
 }
