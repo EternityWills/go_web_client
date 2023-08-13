@@ -1,4 +1,5 @@
 import syscfg from "../config/syscfg"
+import { ROUTER_VIEW_KEY } from "@/utils/Constants"
 import type { RouteRecordRaw } from "vue-router"
 
 export const initRoutes = () => {
@@ -9,8 +10,9 @@ export const initRoutes = () => {
         name: `${syscfg.module}Index`,
         path: stPath,
         meta: {
-            title: lpk('blog'),
+            title: lpk('Blog'),
             requireAuth: false,
+            belongToRouterViewKey: ROUTER_VIEW_KEY.Index
         },
         component: () => import('../views/Index/Index.vue')
     },
@@ -24,7 +26,7 @@ export const initRoutes = () => {
         component: () => import('../views/article/Detail/articleDetail.vue')
     }, {
         name: 'editArticle',
-        path: `${stPath}/edit`,
+        path: `${stPath}/article/edit`,
         meta: {
             title: lpk('page.biog.article.edit'),
         },

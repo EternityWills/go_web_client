@@ -18,7 +18,6 @@ const routeBModRouteOper: IBModRouteOper = {
 
         if (isArray(mixRouter)) {
             giAllBModRoutes = giAllBModRoutes.concat(mixRouter)
-            console.log(giAllBModRoutes)
             return
         }
 

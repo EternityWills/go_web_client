@@ -31,6 +31,7 @@ export const ininApp = async () => {
 
     //加载基础平台的语言包
     initLpk()
+
     //初始化各个业务模块
     const IAllEntry: GlobalType.IRecord = import.meta.glob('@/bmod/*/entry.ts', { eager: true })
     for (const path in IAllEntry) {
