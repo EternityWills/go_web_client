@@ -33,6 +33,7 @@ export const initRouter: () => Router = () => {
                     component: () => import('@/views/My/My.vue'),
                     meta: {
                         title: lpk('page.my.Title'),
+                        keepAlive: false,
                     }
                 }
             ]

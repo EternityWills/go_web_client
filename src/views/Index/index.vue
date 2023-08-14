@@ -6,7 +6,9 @@
 <template>
     <div class="index-w">
         <div class="title">Index.vue</div>
-        <router-view />
+
+        <keep-alive-router-view />
+
         <ul class="g-flex-rsbc">
             <li>
                 <router-link :to="{ name: 'home' }">{{ lpk('page.index.Title') }}</router-link>
