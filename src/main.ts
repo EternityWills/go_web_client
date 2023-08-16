@@ -14,6 +14,12 @@ import './assets/styles/global.scss'
 (async () => {
     /*初始化系统基础配置信息（保证模块加载完成后，再创建UI）
         1.全局变量(app),语言包(lpk),Ajax,Tools的定义
+        Ajax封装：
+            1.通过任务队列解决基于XHR异步请求产生的回调地狱问题
+            2.基于Axios库实现Ajax封装
+            3.在封装好的Aiax库的基础上实现BaseAPI的封装，将一些通用的WebApi请求封装
+            4.在封装好的BaseApi基础上实现各模块WebApi调用
+            6.Mock数据处理
         2.异步加载基础模块的配置信息
             加载系统当前状态信息
             加载当前登录用户的个人信息
