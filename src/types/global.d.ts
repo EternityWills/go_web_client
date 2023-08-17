@@ -1,6 +1,7 @@
 import { IApp } from "@/config/app";
 import { ITools } from "@/utils/Tools"
 import { IFnLpk } from "@/config/lpk";
+import { type } from "os";
 
 declare global {
     declare namespace GlobalType {
@@ -11,6 +12,8 @@ declare global {
     const app: IApp
     const Tools: ITools
     const lpk: IFnLpk
+
+    type ITimeout = ReturnType<typeof setTimeout>
 
     interface Window {
         app: IApp;//全局app对象，挂载全局数据与方法

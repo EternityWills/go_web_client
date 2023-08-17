@@ -1,6 +1,19 @@
 import cookies from 'js-cookie'
 
+const fCachePrevenCachePreventNumntRandom = Math.random()//cp随机数生成
+let nCachePreventNum = 0//cp计数器
 const iTools = {
+    //显示全局遮罩
+    showLoadMask() {
+
+    },
+    //防止API请求命中本地缓存
+    addCachPrevent(url: string = '') {
+        const nQueryStringFlagIndex = url.indexOf('?')
+        url += `${(-1 == nQueryStringFlagIndex ? '?' : '&')}cp=${(nCachePreventNum++ + nCachePreventNum)}`
+
+        return url
+    },
     Router: {//路由操作命名空间
 
     },
