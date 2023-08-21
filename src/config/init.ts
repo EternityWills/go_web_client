@@ -4,6 +4,7 @@ import Tools from "@/utils/Tools"
 import { initLoginUserInfo } from '@/controller/AppCtl'
 import { lpk, initLpk } from './lpk'
 import { initTheme } from './theme'
+import Ajax from '@/utils/Request'
 
 //声明全局变量相关的类型
 type IGlobalVarsKey = 'app' | 'lpk' | 'Tools' | 'Ajax'
@@ -15,6 +16,7 @@ const iGlobalVars: IIGlobalVars = {
     app, //全局应用对象
     Tools,//全局工具库对象，包含一些公用方法
     lpk,//全局语言包支持函数
+    Ajax,//全局Ajax请求库
 }
 
 Object.keys(iGlobalVars).forEach(stkey => {

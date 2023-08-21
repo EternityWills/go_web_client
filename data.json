@@ -1,0 +1,15 @@
+{
+    "code":200,
+    "data":{
+        "total":100,
+        "items":[{
+            "id":1,
+        "name":"zs"
+        },{
+            "id":2,
+        "name":"ls"
+        }
+    ]
+    },
+    "message":"成功"
+}

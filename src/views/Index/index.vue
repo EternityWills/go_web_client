@@ -1,5 +1,16 @@
 <script setup lang="ts">
+import mdIUesrApi from '@/api/UserApi';
 
+onMounted(async () => {
+    const iUser = await mdIUesrApi.get({ id: 2, name: 'zs' })
+    console.log('1', iUser)
+
+    const iUserList = await mdIUesrApi.list({ npagSize: 2 })
+    console.log('2', iUserList)
+
+    mdIUesrApi.post({ name: 'ls', age: 22, sex: 12 })
+
+})
 
 </script>
 
