@@ -3,7 +3,6 @@
 Tools.LocalStorage.setItem("test_001", 'testvalue')
 
 console.log(lpk('Index'))
-let show: boolean = true
 
 </script>
 

@@ -13,7 +13,7 @@ const iState = reactive<IKeepAliveRouterViewState>({
 
 const { giExcludeNames } = toRefs(iState)
 
-watch(useRoute(), (newValue, oldValue) => {
+watch(useRoute(), (newValue) => {
     if (false === get(newValue, 'meta.keepAlive', true)) {
         // const stCmpName = get(newValue, 'meta.cmpName', '')
         const stCmpName = get(newValue.matched[newValue.matched.length - 1], 'components.default["__name"]', '')

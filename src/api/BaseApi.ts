@@ -1,4 +1,4 @@
-import { get, method } from "lodash"
+import { get } from "lodash"
 import { IResponse } from "@/utils/Request"
 import { APIMethods } from "@/utils/Constants"
 export { APIMethods } from "@/utils/Constants";
